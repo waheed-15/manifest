@@ -1,0 +1,19 @@
+apiVersion: argopoj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-app-argo
+  namespace: argocd
+spec:
+  project: default
+  source: https://github.com/waheed-15/manifest
+    targetRevision: HEAD 
+    path: manifest 
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selHeal: true
+      prune: true
