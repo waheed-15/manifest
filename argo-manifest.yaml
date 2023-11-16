@@ -16,5 +16,5 @@
       syncOptions:
       - CreateNamespace=true
       automated:
-        selHeal: true
+        selfHeal: true
         prune: true
